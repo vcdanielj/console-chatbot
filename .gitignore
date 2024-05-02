@@ -1,3 +1,6 @@
+### dotenv ###
+.env
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -121,7 +124,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
@@ -182,4 +184,4 @@ pyrightconfig.json
 pyvenv.cfg
 pip-selfcheck.json
 
-# End of https://www.toptal.com/developers/gitignore/api/python,venv
+# End of https://www.toptal.com/developers/gitignore/api/python,venv,dotenv

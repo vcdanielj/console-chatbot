@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "console-chatbot"
+version = "0.1.0"
+description = "Chatbot basado en la API de Gemini hecho con python para trabajar en la terminal"
+authors = [
+  "Jose Daniel Vergara <vcdanielj@gmail.com>",
+  "Sebastian Medina",
+  "Gisela Alonso",
+  "Manuel Peralta",
+  "Sofia Tamaris",
+]
+readme = 'README.md'
+repository = "https://github.com/vcdanielj/console-chatbot"
+keywords = ['chatbot', 'ia']
+
+[tool.poetry.dependencies]
+python = "^3.7"
