@@ -15,9 +15,11 @@ class ChatBot:
         return Markdown(textwrap.indent(text, "> ", predicate=lambda _: True))
 
     def preguntar(self, pregunta):
-        response = self.chat.send_message(pregunta, stream=True)
-        for chunk in response:
-            return chunk.text
+        respuesta = self.chat.send_message(pregunta, stream=True)
+        acum = ""
+        for chunk in respuesta:
+            acum += chunk.text
+        return acum
 
 
     def iniciar(self):
