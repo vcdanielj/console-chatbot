@@ -14,7 +14,10 @@ def responder(mensaje):
     try:
         bot.reply_to(mensaje, chatbot.preguntar(mensaje.text))
     except Exception:
-        responder(mensaje)
+        manejar_error(e)
+
+def manejar_error():
+    bot.send_message("Lo siento, hubo un problema al procesar tu mensaje.")
 
 if __name__ == "__main__":
     bot.polling(non_stop=True)
