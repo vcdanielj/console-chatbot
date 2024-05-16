@@ -1,7 +1,10 @@
 import telebot
+import dotenv
+import os
 from chatbot import ChatBot
 
-TOKEN = '7136318826:AAHjrFBK11UoEmmCwQ3OdW3GZvCuijPRmaU'
+dotenv.load_dotenv()
+TOKEN = os.getenv("TOKEN")
 
 bot = telebot.TeleBot(TOKEN)
 chatbot = ChatBot()
@@ -13,7 +16,7 @@ def saludar(mensaje):
 def responder(mensaje):
     try:
         bot.reply_to(mensaje, chatbot.preguntar(mensaje.text))
-    except Exception:
+    except Exception as e:
         manejar_error(e)
 
 def manejar_error():
