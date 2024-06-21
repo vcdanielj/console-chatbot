@@ -1,7 +1,8 @@
 import telebot
-from chatbot import ChatBot 
+from chatbot import ChatBot
 
-TOKEN = '7136318826:AAHjrFBK11UoEmmCwQ3OdW3GZvCuijPRmaU'
+dotenv.load_dotenv()
+TOKEN = os.getenv("TOKEN")
 
 bot = telebot.TeleBot(TOKEN)
 chatbot = ChatBot()
@@ -18,7 +19,7 @@ def responder(mensaje):
     try:
         bot.reply_to(mensaje, chatbot.preguntar(mensaje.text))
     except Exception:
-        manejar_error()
+        manejar_error(e)
 
 def manejar_error():
     bot.send_message("Lo siento, hubo un problema al procesar tu mensaje.")
