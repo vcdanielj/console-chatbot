@@ -1,5 +1,5 @@
 import telebot
-from chatbot import ChatBot
+from chatbot import ChatBot 
 
 TOKEN = '7136318826:AAHjrFBK11UoEmmCwQ3OdW3GZvCuijPRmaU'
 
@@ -9,12 +9,16 @@ chatbot = ChatBot()
 def saludar(mensaje):
     bot.reply_to(mensaje, "Hola, soy un Bot de Telegram, ¿en que te puedo ayudar?")
 
+@bot.message_handler(commands=['reservar'])
+def reservar(mensaje):
+    bot.reply_to(mensaje, "En que fecha deseas reservar?")
+
 @bot.message_handler(func=lambda mensaje: True)
 def responder(mensaje):
     try:
         bot.reply_to(mensaje, chatbot.preguntar(mensaje.text))
     except Exception:
-        manejar_error(e)
+        manejar_error()
 
 def manejar_error():
     bot.send_message("Lo siento, hubo un problema al procesar tu mensaje.")
